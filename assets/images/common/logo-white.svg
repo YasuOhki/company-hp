@@ -1,0 +1,22 @@
+<svg width="220" height="50" viewBox="0 0 220 50" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    
+    <!-- bridge icon -->
+    <g transform="translate(0,8)">
+      <path d="M5 24 C15 5, 35 5, 45 24" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="5" cy="24" r="3" fill="#FFFFFF"/>
+      <circle cx="25" cy="12" r="3" fill="#FFFFFF"/>
+      <circle cx="45" cy="24" r="3" fill="#FFFFFF"/>
+    </g>
+
+    <!-- text -->
+    <text x="60" y="30"
+      font-family="Noto Sans JP, Arial, sans-serif"
+      font-size="20"
+      fill="#FFFFFF"
+      font-weight="600">
+      CareerBridge
+    </text>
+
+  </g>
+</svg>
