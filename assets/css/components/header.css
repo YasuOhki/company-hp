@@ -1,0 +1,219 @@
+/*
+ * ヘッダースタイル
+ */
+
+.site-header {
+    background-color: var(--color-bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+/* ロゴ */
+.header-logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.logo-text small {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}
+
+/* ヘッダー連絡先 */
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-tel {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.tel-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+.tel-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-roboto);
+}
+
+.tel-hours {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}
+
+/* ハンバーガーメニュー */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* グローバルナビゲーション */
+.global-nav {
+    border-top: 1px solid var(--color-border);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-item a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg-gray);
+}
+
+.nav-item.active a {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--color-accent);
+}
+
+/* レスポンシブ: タブレット */
+@media (max-width: 1024px) {
+    .header-tel {
+        display: none;
+    }
+    
+    .nav-item a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* レスポンシブ: スマートフォン */
+@media (max-width: 768px) {
+    .header-top {
+        padding: 10px 0;
+    }
+    
+    .header-logo img {
+        height: 40px;
+    }
+    
+    .logo-text strong {
+        font-size: 1rem;
+    }
+    
+    .header-contact {
+        gap: 10px;
+    }
+    
+    .btn-contact {
+        display: none;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .global-nav {
+        display: none;
+        border-top: none;
+    }
+    
+    .global-nav.active {
+        display: block;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .nav-item a {
+        padding: 15px 20px;
+    }
+    
+    .nav-item.active::after {
+        display: none;
+    }
+}

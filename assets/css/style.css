@@ -1,0 +1,361 @@
+/*
+ * メインスタイルシート
+ * Theme Name: CareerBridge
+ * Theme URI: https://www.careerbridge.co.jp
+ * Description: 人材派遣会社 Webサイト
+ * Version: 1.0.0
+ */
+
+/* カラー変数 */
+:root {
+    --color-primary: #2E5C8A;
+    --color-accent: #F39C12;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-bg-white: #FFFFFF;
+    --color-bg-gray: #F8F9FA;
+    --color-border: #E0E0E0;
+    
+    --font-sans: 'Noto Sans JP', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    
+    --container-width: 1200px;
+    --section-padding: 80px 0;
+    --transition: all 0.3s ease;
+}
+
+/* 共通レイアウト */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--color-primary);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-accent);
+    margin: 20px auto 0;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--color-text-light);
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* テキストスタイル */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+/* スペーシング */
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+.mt-50 { margin-top: 50px; }
+
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-50 { margin-bottom: 50px; }
+
+/* カード */
+.card {
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+/* グリッド */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ヒーローセクション */
+.hero {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a3a5a 100%);
+    color: var(--color-bg-white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/hero/hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* 特徴セクション */
+.features {
+    background-color: var(--color-bg-gray);
+}
+
+.feature-item {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bg-white);
+    font-size: 2rem;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.feature-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* 統計セクション */
+.stats {
+    background-color: var(--color-primary);
+    color: var(--color-bg-white);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+}
+
+/* ニュースセクション */
+.news-list {
+    list-style: none;
+}
+
+.news-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.news-item:hover {
+    background-color: var(--color-bg-gray);
+}
+
+.news-date {
+    flex-shrink: 0;
+    width: 120px;
+    color: var(--color-text-light);
+    font-family: var(--font-roboto);
+}
+
+.news-title {
+    flex: 1;
+}
+
+.news-title a {
+    color: var(--color-text);
+    transition: var(--transition);
+}
+
+.news-title a:hover {
+    color: var(--color-primary);
+}
+
+/* CTA（Call to Action）セクション */
+.cta {
+    background-color: var(--color-accent);
+    color: var(--color-bg-white);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    padding: 20px 0;
+    background-color: var(--color-bg-gray);
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-item::after {
+    content: '>';
+    margin-left: 10px;
+    color: var(--color-text-light);
+}
+
+.breadcrumb-item:last-child::after {
+    content: '';
+}
+
+/* コンテンツエリア */
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+/* ユーティリティ */
+.show-pc {
+    display: block;
+}
+
+.show-sp {
+    display: none;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* アクセシビリティ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
